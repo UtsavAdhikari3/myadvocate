@@ -1,0 +1,188 @@
+/*
+===================================================
+Custom CSS for Advocate Legal Theme
+===================================================
+*/
+
+/* 1. Global Variables & Utility Classes */
+
+:root {
+    /* Professional Blue/Navy theme for legal services */
+    --bs-primary: #004d99; /* Deep Blue */
+    --bs-primary-rgb: 0, 77, 153;
+    --bs-link-color: var(--bs-primary);
+    
+    /* Darker color for Navbar and Footer */
+    --bs-dark-alt: #1a1a33; /* Very Dark Navy */
+}
+
+/* Apply new colors to Bootstrap classes */
+.bg-primary { background-color: var(--bs-primary) !important; }
+.btn-primary { 
+    background-color: var(--bs-primary); 
+    border-color: var(--bs-primary); 
+}
+.btn-primary:hover {
+    background-color: #003a73; /* Slightly darker hover */
+    border-color: #003a73;
+}
+.text-primary { color: var(--bs-primary) !important; }
+
+/* Custom background for Navbar (bg-nav) and Footer (bg-dark-alt) */
+.bg-nav, .bg-dark-alt {
+    background-color: var(--bs-dark-alt) !important;
+}
+
+/* 2. Layout Adjustments */
+
+/* Adjusting the top padding of the main content to clear the fixed navbar */
+.pt-6 { padding-top: 100px !important; } /* Custom class for larger top padding on MD+ screens */
+@media (min-width: 768px) {
+    .pt-md-6 { padding-top: 100px !important; }
+}
+
+/* 3. Navbar & Footer Styling */
+
+.navbar-brand .brand-mark {
+    font-size: 1.25rem;
+    color: var(--bs-primary); /* Make the scale icon a key color */
+}
+
+.nav-shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.footer .socials a {
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer .socials a:hover {
+    color: var(--bs-primary) !important;
+}
+
+
+/* 4. Homepage Component Styling */
+
+/* Hero Section CTA Size */
+.btn-xl {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Card Hover Effect (for Blogs and Services) */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-5px); /* Lifts the card */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; /* Deeper shadow on hover */
+}
+
+/* Image Consistency for Blogs */
+.cover-img {
+    width: 100%;
+    height: 200px; /* Standardize the height of all thumbnails */
+    object-fit: cover; /* Ensures image covers the area without distorting */
+    border-top-left-radius: var(--bs-border-radius);
+    border-top-right-radius: var(--bs-border-radius);
+}
+/* Styling for the About Page Profile Image */
+.profile-image {
+    width: 100%; /* Make the image take 100% of its parent column */
+    max-width: 300px; /* Set a maximum width for the image */
+    height: 350px; /* Set a fixed height */
+    object-fit: cover; /* This is crucial: crops the image to fit without distorting */
+    display: block; /* Ensures proper centering with margin auto */
+    margin: 0 auto; /* Center the image within its parent div */
+    border: 5px solid #fff; /* Optional: adds a nice white border */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Re-apply a subtle shadow */
+}
+
+/* For smaller screens, you might want to adjust the height if 350px is too tall */
+@media (max-width: 767.98px) {
+    .profile-image {
+        height: 300px; /* Slightly shorter on mobile */
+        max-width: 250px; /* Smaller max-width on mobile */
+    }
+}
+
+/* 5. Blog Detail / Article Page */
+.blog-article {
+    max-width: 720px;
+}
+
+.blog-header h1 {
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+.blog-cover-figure img {
+    max-height: 420px;
+    object-fit: cover;
+}
+
+.blog-content {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #374151;
+}
+
+.blog-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #111827;
+}
+
+.blog-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.blog-content p {
+    margin-bottom: 1.25rem;
+}
+
+.blog-content ul,
+.blog-content ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.blog-content li {
+    margin-bottom: 0.5rem;
+}
+
+.blog-content blockquote {
+    border-left: 4px solid var(--bs-primary);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.blog-content a {
+    color: var(--bs-primary);
+    text-decoration: underline;
+}
+
+.blog-content a:hover {
+    color: #003a73;
+}
+
+.blog-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}

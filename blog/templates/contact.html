@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}Contact & Consultation — Profile Associate{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    
+    <header class="text-center mb-5">
+        <span class="badge bg-primary text-white p-2 mb-2 rounded-pill">
+            <i class="bi bi-headset me-1"></i> Get in Touch
+        </span>
+        <h1 class="display-5 fw-bold text-dark mb-3">
+            Book Your Confidential Consultation
+        </h1>
+        <p class="lead text-muted">
+            We offer a free initial consultation to discuss your legal needs. All submissions are strictly confidential.
+        </p>
+    </header>
+
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-7 col-md-8 mb-5">
+            <div class="card p-4 p-md-5 shadow-lg border-0">
+                <h3 class="mb-4 fw-bold text-dark">Send Us a Message</h3>
+                
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+                {% endif %}
+
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="id_name" class="form-label fw-bold">Full Name</label>
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                        <div class="text-danger small">{{ form.name.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="id_email" class="form-label fw-bold">Email Address</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                        <div class="text-danger small">{{ form.email.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="id_message" class="form-label fw-bold">Message / Case Overview</label>
+                        {{ form.message }}
+                        {% if form.message.errors %}
+                        <div class="text-danger small">{{ form.message.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <button class="btn btn-primary btn-lg w-100 fw-bold" type="submit">
+                        Send Confidential Message <i class="bi bi-check-circle ms-2"></i>
+                    </button>
+                </form>
+                </div>
+        </div>
+
+        <div class="col-lg-5 col-md-8">
+            <div class="p-4 p-md-5 bg-light rounded-4 shadow-sm h-100">
+                <h3 class="fw-bold mb-4 border-bottom pb-2">Direct Contact Information</h3>
+                
+                <div class="d-flex align-items-start mb-4">
+                    <i class="bi bi-phone-vibrate text-primary fs-3 me-3"></i>
+                    <div>
+                        <h6 class="fw-bold mb-0">Call Our Office</h6>
+                        <a href="tel:+9779851006683" class="lead text-dark text-decoration-none">+977 9851006683</a>
+                        <p class="small text-muted mt-1">Available M-F, 9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-4">
+                    <i class="bi bi-envelope text-primary fs-3 me-3"></i>
+                    <div>
+                        <h6 class="fw-bold mb-0">General Enquiries</h6>
+                        <a href="mailto:radhikari201@gmail.com" class="lead text-dark text-decoration-none">radhikari201@gmail.com</a>
+                        <p class="small text-muted mt-1">For general administrative questions.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-start mb-4">
+                    <i class="bi bi-pin-map text-primary fs-3 me-3"></i>
+                    <div>
+                        <h6 class="fw-bold mb-0">Office Location</h6>
+                        <p class="lead mb-0">Kathmandu, Chabahil</p>
+                        <p class="small text-muted mt-1">Visit by appointment only.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+{% endblock %}

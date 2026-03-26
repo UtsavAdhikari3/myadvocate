@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}About Rajesh Adhikari & Profile Associate{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="container py-5">
+    
+    <header class="text-center mb-5">
+        <span class="badge bg-primary text-white p-2 mb-2 rounded-pill">
+            <i class="bi bi-patch-check me-1"></i> Trust & Experience
+        </span>
+        <h1 class="display-5 fw-bold text-dark mb-3">
+            Our Commitment to Justice
+        </h1>
+        <p class="lead text-muted col-lg-8 mx-auto">
+            We are dedicated to providing ethical, strategic, and results-driven legal advocacy. Your case matters, and we fight tirelessly to protect your rights.
+        </p>
+    </header>
+
+    <section class="mb-5 py-4">
+        <div class="row align-items-center">
+            
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+                <div class="p-3 bg-light rounded-4 shadow-lg">
+                    <img src="{% static 'images/Profile.jpeg' %}" 
+                         class="img-fluid rounded-3 profile-image shadow-sm" 
+                         alt="Professional Profile Image of Adv. Rajesh Adhikari">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h2 class="display-6 fw-bold text-primary mb-1">Adv. Rajesh Adhikari</h2>
+                <p class="lead text-dark-emphasis border-bottom pb-3">
+                    Legal Advocate | Principal Attorney | Profile Associate
+                </p>
+
+                <p>
+                    Adv. Rajesh Adhikari is an experienced legal advocate committed to delivering strategic and personalized legal services. With a focus on ethical practice and tireless preparation, he has successfully represented clients across diverse jurisdictions in Nepal.
+                </p>
+                
+                <p>
+                    "My philosophy is simple: Know the law, know the facts, and fight for the client. We believe every client deserves clarity, dedication, and the strongest possible defense."
+                </p>
+                
+                <h5 class="mt-4 fw-bold text-dark">Core Practice Areas</h5>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Criminal Defense</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Family Law & Divorce</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Corporate & Contract Law</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Property & Business Disputes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <a href="{% url 'contact' %}" class="btn btn-outline-primary mt-3">
+                    Schedule a Consultation <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light rounded-4 mt-5">
+        <h3 class="text-center fw-bold mb-4">Our Firm's Credentials</h3>
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <i class="bi bi-journal-check text-primary display-4"></i>
+                <h4 class="mt-3 fw-bold">Strategic Counsel</h4>
+                <p class="small text-muted">Developing innovative legal strategies tailored to your unique case requirements.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <i class="bi bi-shield-lock text-primary display-4"></i>
+                <h4 class="mt-3 fw-bold">Strict Confidentiality</h4>
+                <p class="small text-muted">We adhere to the highest standards of professional secrecy and ethics.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <i class="bi bi-award text-primary display-4"></i>
+                <h4 class="mt-3 fw-bold">Proven Track Record</h4>
+                <p class="small text-muted">Consistent history of achieving favorable outcomes for our diverse clientele.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}

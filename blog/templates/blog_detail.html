@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} — Profile Associate{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <article class="col-lg-8 blog-article">
+            
+            <nav aria-label="breadcrumb" class="mb-4">
+                <a href="{% url 'blogs' %}" class="text-decoration-none text-primary d-inline-flex align-items-center small fw-medium">
+                    <i class="bi bi-arrow-left me-2"></i> Back to All Articles
+                </a>
+            </nav>
+
+            <header class="blog-header mb-4">
+                <h1 class="display-6 fw-bold text-dark mb-3">{{ post.title }}</h1>
+                <div class="d-flex flex-wrap gap-3 text-muted small">
+                    <span><i class="bi bi-calendar3 me-1"></i> {{ post.created_at|date:"F d, Y" }}</span>
+                    {% if post.author %}
+                    <span><i class="bi bi-person me-1"></i> {{ post.author }}</span>
+                    {% endif %}
+                </div>
+            </header>
+
+            {% if post.thumbnail %}
+            <figure class="blog-cover-figure mb-4">
+                <img 
+                    src="{{ post.thumbnail.url }}" 
+                    class="img-fluid rounded-3 w-100" 
+                    alt="{{ post.title }}"
+                >
+            </figure>
+            {% endif %}
+
+            <div class="blog-content">
+                {{ post.content|safe }}
+            </div>
+
+            <footer class="blog-footer mt-5 pt-4 border-top">
+                <a href="{% url 'blogs' %}" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left me-2"></i> More Articles
+                </a>
+                <a href="{% url 'contact' %}" class="btn btn-primary ms-2">
+                    Book Consultation <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </footer>
+
+        </article>
+    </div>
+</div>
+{% endblock %}
