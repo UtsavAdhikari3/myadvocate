@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn myadvocate.wsgi --bind 0.0.0.0:$PORT
+web: mkdir -p /data && python manage.py migrate && gunicorn myadvocate.wsgi --bind 0.0.0.0:$PORT
